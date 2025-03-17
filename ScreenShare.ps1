@@ -27,18 +27,18 @@ function Get-FileSignatureStatus {
 Clear-Host
 
 Write-Host ""
-Write-Host "╔═══════════════════════════════════════════════════════╗" -ForegroundColor DarkMagenta
-Write-Host "║   ██████╗░░█████╗░███╗░░░███╗░░░░░░██████╗░██╗░░██╗   ║" -ForegroundColor DarkMagenta
-Write-Host "║   ██╔══██╗██╔══██╗████╗░████║░░░░░░██╔══██╗██║░██╔╝   ║" -ForegroundColor DarkMagenta
-Write-Host "║   ██████╦╝███████║██╔████╔██║█████╗██████╔╝█████═╝░   ║" -ForegroundColor DarkMagenta
-Write-Host "║   ██╔══██╗██╔══██║██║╚██╔╝██║╚════╝██╔══██╗██╔═██╗░   ║" -ForegroundColor DarkMagenta
-Write-Host "║   ██████╦╝██║░░██║██║░╚═╝░██║░░░░░░██║░░██║██║░╚██╗   ║" -ForegroundColor DarkMagenta
-Write-Host "║   ╚═════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝░░░░░░╚═╝░░╚═╝╚═╝░░╚═╝   ║" -ForegroundColor DarkMagenta
-Write-Host "╚═══════════════════════════════════════════════════════╝" -ForegroundColor DarkMagenta
+Write-Host "╔════════════════════════════════════════════╗" -ForegroundColor DarkMagenta
+Write-Host "║   ░██████╗░██████╗░░░░░░██████╗░██╗░░██╗   ║" -ForegroundColor DarkMagenta
+Write-Host "║   ██╔════╝██╔════╝░░░░░░██╔══██╗██║░██╔╝   ║" -ForegroundColor DarkMagenta
+Write-Host "║   ╚█████╗░╚█████╗░█████╗██████╔╝█████═╝░   ║" -ForegroundColor DarkMagenta
+Write-Host "║   ░╚═══██╗░╚═══██╗╚════╝██╔══██╗██╔═██╗░   ║" -ForegroundColor DarkMagenta
+Write-Host "║   ██████╔╝██████╔╝░░░░░░██║░░██║██║░╚██╗   ║" -ForegroundColor DarkMagenta
+Write-Host "║   ╚═════╝░╚═════╝░░░░░░░╚═╝░░╚═╝╚═╝░░╚═╝   ║" -ForegroundColor DarkMagenta
+Write-Host "╚════════════════════════════════════════════╝" -ForegroundColor DarkMagenta
 Write-Host ""
 Write-Host "   Developed by Koral and reqoan." -ForegroundColor Magenta
-Write-Host "   https://github.com/koralopp" -ForegroundColor Magenta
-Write-Host "   https://github.com/reqoan" -ForegroundColor Magenta
+Write-Host "   https://github.com/Koralop0" -ForegroundColor Magenta
+Write-Host "   https://github.com/Reqoan" -ForegroundColor Magenta
 Write-Host ""
 
 do {
@@ -138,7 +138,7 @@ do {
         $stopwatch.Stop()
         $elapsedTime = $stopwatch.Elapsed.TotalMinutes
         Write-Host ""
-        Write-Host " [Reqoarder] Elapsed Time: $elapsedTime Minutes" -ForegroundColor Green
+        Write-Host " [Rekoral] Elapsed Time: $elapsedTime Minutes" -ForegroundColor Green
 
     }
     elseif ($choice -eq "2") {
