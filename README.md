@@ -7,8 +7,4 @@ This PowerShell script is designed to help visualize and check information about
 
 ## **Important: Always Download from Official Sources**
 
-For your **security**, always make sure to download the script or executable from the **official GitHub repository**. Downloading from untrusted sources can lead to the risk of downloading malicious files.
-
-## Requirements
-
-- **Administrator Permissions**: Some functionalities require administrator privileges, especially for retrieving information about services and system registry keys.
+For your **security**, always make sure to download the script or executable from the **official GitHub repository**. Downloading from untrusted sources can lead to the risk of downloading malicious files
