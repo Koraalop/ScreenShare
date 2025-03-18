@@ -36,8 +36,8 @@ Write-Host "║   ██████╔╝██████╔╝░░░░�
 Write-Host "║   ╚═════╝░╚═════╝░░░░░░░╚═╝░░╚═╝╚═╝░░╚═╝   ║" -ForegroundColor DarkMagenta
 Write-Host "╚════════════════════════════════════════════╝" -ForegroundColor DarkMagenta
 Write-Host ""
-Write-Host "   Developed by Koral and reqoan." -ForegroundColor Magenta
-Write-Host "   https://github.com/Koralop0" -ForegroundColor Magenta
+Write-Host "   Developed by Koraalop (Koralop) and reqoan." -ForegroundColor Magenta
+Write-Host "   https://github.com/Koraalop" -ForegroundColor Magenta
 Write-Host "   https://github.com/Reqoan" -ForegroundColor Magenta
 Write-Host ""
 
