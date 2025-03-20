@@ -147,9 +147,13 @@ do {
 
         Get-Service | Where-Object { $_.StartType -eq 'Automatic' } | ForEach-Object {
             $service = $_
+            $serviceDetails = Get-WmiObject -Class Win32_Service -Filter "Name='$($service.Name)'"
+            $servicePath = $serviceDetails.PathName
+
             Write-Host -ForegroundColor DarkRed "----------------------------"
             Write-Host -ForegroundColor Red "Name: $($service.Name)"
-            Write-Host -ForegroundColor DarkYellow "Status: $($service.Status)"
+            Write-Host -ForegroundColor DarkYellow "Path: $servicePath"
+            Write-Host -ForegroundColor Yellow "Status: Enabled"
             Write-Host -ForegroundColor DarkRed "----------------------------"
         }
 
@@ -161,9 +165,13 @@ do {
 
         Get-Service | Where-Object { $_.StartType -eq 'Disabled' } | ForEach-Object {
             $service = $_
+            $serviceDetails = Get-WmiObject -Class Win32_Service -Filter "Name='$($service.Name)'"
+            $servicePath = $serviceDetails.PathName
+
             Write-Host -ForegroundColor DarkRed "----------------------------"
             Write-Host -ForegroundColor Red "Name: $($service.Name)"
-            Write-Host -ForegroundColor DarkYellow "Status: $($service.Status)"
+            Write-Host -ForegroundColor DarkYellow "Path: $servicePath"
+            Write-Host -ForegroundColor Yellow "Status: Disabled"
             Write-Host -ForegroundColor DarkRed "----------------------------"
         }
 
