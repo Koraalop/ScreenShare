@@ -44,11 +44,12 @@ Write-Host ""
 do {
     Write-Host "Select an option:"
     Write-Host "1. Bam View"
-    Write-Host "2. Service View"
+    Write-Host "2. View Enabled Services"
+    Write-Host "3. View Disabled Services"
     Write-Host "0. Exit"
     Write-Host ""
 
-    $choice = Read-Host "Enter 1, 2, or 0 to exit"
+    $choice = Read-Host "Enter 1, 2, 3, or 0 to exit"
 
     if ($choice -eq "1") {
         Write-Host "Bam View selected" -ForegroundColor Green
@@ -142,22 +143,27 @@ do {
 
     }
     elseif ($choice -eq "2") {
-        Write-Host "Service View selected" -ForegroundColor Green
+        Write-Host "View Enabled Services selected" -ForegroundColor Green
 
-        Get-Service | ForEach-Object {
+        Get-Service | Where-Object { $_.StartType -eq 'Automatic' } | ForEach-Object {
             $service = $_
-            $serviceStatus = $service.Status
-
-            $serviceDetails = Get-WmiObject -Class Win32_Service -Filter "Name='$($service.Name)'"
-            $serviceEnabled = $serviceDetails.StartMode
-            $servicePath = $serviceDetails.PathName
-
-            $status = if ($serviceEnabled -eq 'Auto') { "enabled" } else { "disabled" }
-
             Write-Host -ForegroundColor DarkRed "----------------------------"
             Write-Host -ForegroundColor Red "Name: $($service.Name)"
-            Write-Host -ForegroundColor DarkYellow "Path: $servicePath"
-            Write-Host -ForegroundColor Yellow "Status: $status"
+            Write-Host -ForegroundColor DarkYellow "Status: $($service.Status)"
+            Write-Host -ForegroundColor DarkRed "----------------------------"
+        }
+
+        Write-Host "Press Enter to return to the menu..."
+        Read-Host
+    }
+    elseif ($choice -eq "3") {
+        Write-Host "View Disabled Services selected" -ForegroundColor Green
+
+        Get-Service | Where-Object { $_.StartType -eq 'Disabled' } | ForEach-Object {
+            $service = $_
+            Write-Host -ForegroundColor DarkRed "----------------------------"
+            Write-Host -ForegroundColor Red "Name: $($service.Name)"
+            Write-Host -ForegroundColor DarkYellow "Status: $($service.Status)"
             Write-Host -ForegroundColor DarkRed "----------------------------"
         }
 
@@ -169,6 +175,6 @@ do {
         Exit
     }
     else {
-        Write-Host "Invalid selection. Please choose 1, 2, or 0 to exit." -ForegroundColor Red
+        Write-Host "Invalid selection. Please choose 1, 2, 3, or 0 to exit." -ForegroundColor Red
     }
 } while ($true)
